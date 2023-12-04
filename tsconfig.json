@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "ESNext",
+		"sourceMap": false,
+		"strict": true,
+		"rootDir": "./src",
+		"outDir": "./dist/jsm",
+		"declaration": false,
+		"declarationDir": null,
+		"removeComments": true,
+		"typeRoots": [
+			"./typings"
+		]
+	},
+	"exclude": [
+		"**/*.glsl"
+	]
+}
