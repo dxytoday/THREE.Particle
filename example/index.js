@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import { OrbitControls } from "./lib/OrbitControls.js";
-import { GUI } from "./lib/lil-gui.esm.js";
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/controls/OrbitControls.js";
+import Stats from "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/libs/stats.module.js";
+import { GUI } from "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/libs/lil-gui.module.min.js";
 import { Particle } from "../dist/THREE.Particle.module.js";
-import Stats from "./lib/stats.module.js";
 
 var scene, gui, group, allSettings = [];
 
