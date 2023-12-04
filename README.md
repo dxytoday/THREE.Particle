@@ -6,3 +6,8 @@
 也可以直接 build 出单独的 js 文件和 d.ts 文件。
 
 先 npm install ，再执行 rollup-build 脚本，再使用 Live Server 等工具浏览 example/index.html 。
+
+
+
+
+![Image text](./example/textures/illustation.png)
