@@ -13,7 +13,7 @@ export default {
 		{
 			file: "./dist/THREE.Particle.js",
 			format: "umd",
-			name: 'THREE',
+			name: "THREE",
 			sourcemap: false,
 			globals: {
 				three: "THREE"

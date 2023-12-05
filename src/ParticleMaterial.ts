@@ -4,6 +4,12 @@ import fragmentShader from "./shaders/particle.frag.glsl";
 
 // 提示：在 vscode 中 ctrl + k + 0/j 可以快速收起/展开所有折叠行
 
+interface ITextureUniform extends THREE.IUniform<THREE.Texture | null> {
+
+    needsUpdate?: boolean;
+
+}
+
 type ParticleUniforms = {
 
     opacity: THREE.IUniform<number>,
@@ -24,7 +30,7 @@ type ParticleUniforms = {
 
     gravityVector: THREE.IUniform<THREE.Vector3>,
 
-    map: THREE.IUniform<THREE.Texture | null>,
+    map: ITextureUniform,
     useMap: THREE.IUniform<boolean>,
 
     startSize: THREE.IUniform<number>,
@@ -246,6 +252,8 @@ export class ParticleMaterial extends THREE.ShaderMaterial {
     public set useMap(flag: boolean) {
 
         this.uniforms.useMap.value = !!flag;
+
+        this.uniforms.map.needsUpdate = this.uniforms.useMap.value
 
     }
 

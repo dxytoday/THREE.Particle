@@ -51,9 +51,9 @@ class ParticleGeometry extends THREE.BufferGeometry {
 
         this.setIndex(indices);
 
-        this.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-        this.setAttribute('direction', new THREE.Float32BufferAttribute(directions, 3));
-        this.setAttribute('random', new THREE.Float32BufferAttribute(randoms, 4));
+        this.setAttribute("position", new THREE.Float32BufferAttribute(vertices, 3));
+        this.setAttribute("direction", new THREE.Float32BufferAttribute(directions, 3));
+        this.setAttribute("random", new THREE.Float32BufferAttribute(randoms, 4));
 
         this.updateRecords.clear();
 
@@ -67,8 +67,8 @@ class ParticleGeometry extends THREE.BufferGeometry {
 
         }
 
-        const posAttr = this.getAttribute('position') as THREE.Float32BufferAttribute;
-        const direAttr = this.getAttribute('direction') as THREE.Float32BufferAttribute;
+        const posAttr = this.getAttribute("position") as THREE.Float32BufferAttribute;
+        const direAttr = this.getAttribute("direction") as THREE.Float32BufferAttribute;
 
         const v3 = new THREE.Vector3(0, 0, 0);
         const number = this.index.count;
@@ -103,9 +103,9 @@ class ParticleGeometry extends THREE.BufferGeometry {
         const direction = new THREE.Vector4(this.motionDirection.x, this.motionDirection.y, this.motionDirection.z, 0);
         direction.applyMatrix4(matrix);
 
-        const posAttr = this.getAttribute('position') as THREE.BufferAttribute;
-        const dirAttr = this.getAttribute('direction') as THREE.BufferAttribute;
-        const ranAttr = this.getAttribute('random');
+        const posAttr = this.getAttribute("position") as THREE.BufferAttribute;
+        const dirAttr = this.getAttribute("direction") as THREE.BufferAttribute;
+        const ranAttr = this.getAttribute("random");
 
         const material = particle.material;
         const elapsed = material.elapsed;
@@ -165,9 +165,9 @@ class ParticleGeometry extends THREE.BufferGeometry {
 
         this.index = null;
 
-        this.deleteAttribute('position');
-        this.deleteAttribute('direction');
-        this.deleteAttribute('random');
+        this.deleteAttribute("position");
+        this.deleteAttribute("direction");
+        this.deleteAttribute("random");
 
     }
 
