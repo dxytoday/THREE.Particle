@@ -73,140 +73,140 @@ function addParticle(particle) {
 
     Object.defineProperties(settings,
         {
-            "运行时长": {
+            elapsed: {
                 get: () => material.elapsed,
                 set: (value) => material.elapsed = value,
             },
 
-            "运动过程独立": {
+            independentMotion: {
                 get: () => particle.independentMotion,
                 set: (value) => particle.independentMotion = value,
             },
-            "发射总量": {
+            count: {
                 get: () => particle.count,
                 set: (value) => particle.count = value,
             },
-            "发射时长/秒": {
+            emissionDuration: {
                 get: () => material.emissionDuration,
                 set: (value) => material.emissionDuration = value,
             },
-            "发射立体角": {
+            directionSolidAngle: {
                 get: () => material.directionSolidAngle,
                 set: (value) => material.directionSolidAngle = value,
             },
 
-            "运动时长/秒": {
+            motionDuration: {
                 get: () => material.motionDuration,
                 set: (value) => material.motionDuration = value,
             },
-            "运动时长随机系数": {
+            motionDurationRandomRatio: {
                 get: () => material.motionDurationRandomRatio,
                 set: (value) => material.motionDurationRandomRatio = value,
             },
 
-            "运动速度/长度": {
+            motionSpeed: {
                 get: () => material.motionSpeed,
                 set: (value) => material.motionSpeed = value,
             },
-            "运动速度随机系数": {
+            motionSpeedRandomRatio: {
                 get: () => material.motionSpeedRandomRatio,
                 set: (value) => material.motionSpeedRandomRatio = value,
             },
 
-            "重力值": {
+            gravity: {
                 get: () => material.gravity,
                 set: (value) => material.gravity = value,
             },
 
-            "纹理贴图": {
+            map: {
                 get: () => material.map,
                 set: (value) => material.map = value,
             },
-            "启用纹理贴图": {
+            useMap: {
                 get: () => material.useMap,
                 set: (value) => material.useMap = value,
             },
 
-            "贴图旋转速度": {
+            rotationSpeed: {
                 get: () => material.rotationSpeed,
                 set: (value) => material.rotationSpeed = value,
             },
-            "旋转速度随机系数": {
+            rotationSpeedRandomRatio: {
                 get: () => material.rotationSpeedRandomRatio,
                 set: (value) => material.rotationSpeedRandomRatio = value,
             },
 
-            "运动开始尺寸": {
+            startSize: {
                 get: () => material.startSize,
                 set: (value) => material.startSize = value,
             },
-            "运动结束尺寸": {
+            endSize: {
                 get: () => material.endSize,
                 set: (value) => material.endSize = value,
             },
-            "尺寸随机系数": {
+            sizeRandomRatio: {
                 get: () => material.sizeRandomRatio,
                 set: (value) => material.sizeRandomRatio = value,
             },
 
-            "运动开始透明度": {
+            startOpacity: {
                 get: () => material.startOpacity,
                 set: (value) => material.startOpacity = value,
             },
-            "运动结束透明度": {
+            endOpacity: {
                 get: () => material.endOpacity,
                 set: (value) => material.endOpacity = value,
             },
-            "透明度随机系数": {
+            opacityRandomRatio: {
                 get: () => material.opacityRandomRatio,
                 set: (value) => material.opacityRandomRatio = value,
             },
 
-            "运动开始颜色": {
+            startColor: {
                 get: () => material.startColor,
                 set: (value) => material.startColor = value,
             },
-            "运动结束颜色": {
+            endColor: {
                 get: () => material.endColor,
                 set: (value) => material.endColor = value,
             }
         }
     )
 
-    folder.add(settings, "运行时长").listen().disable();
+    folder.add(settings, "elapsed").name('运行时长').listen().disable();
 
-    folder.add(settings, "运动过程独立");
+    folder.add(settings, "independentMotion").name('运动过程独立');
 
-    folder.add(settings, "发射总量");
-    folder.add(settings, "发射时长/秒", 0, 10);
-    folder.add(settings, "发射立体角", 0, 360);
+    folder.add(settings, "count").name('发射总量');
+    folder.add(settings, "emissionDuration", 0, 10).name('发射时长/秒');
+    folder.add(settings, "directionSolidAngle", 0, 360).name('发射立体角');
 
-    folder.add(settings, "运动时长/秒", 0, 10);
-    folder.add(settings, "运动时长随机系数", 0, 1);
+    folder.add(settings, "motionDuration", 0, 10).name('运动时长/秒');
+    folder.add(settings, "motionDurationRandomRatio", 0, 1).name('运动时长随机系数');
 
-    folder.add(settings, "运动速度/长度", 0, 10);
-    folder.add(settings, "运动速度随机系数", 0, 1);
+    folder.add(settings, "motionSpeed", 0, 10).name('运动速度/长度');
+    folder.add(settings, "motionSpeedRandomRatio", 0, 1).name('运动速度随机系数');
 
-    folder.add(settings, "重力值", 0, 1);
+    folder.add(settings, "gravity", 0, 1).name('重力值');
 
-    // folder.add(settings, "纹理贴图");
-    folder.add(settings, "启用纹理贴图");
+    // folder.add(settings, "map).name('纹理贴图');
+    folder.add(settings, "useMap").name('启用纹理贴图');
 
-    folder.add(settings, "贴图旋转速度", 0, 360);
-    folder.add(settings, "旋转速度随机系数", 0, 1);
+    folder.add(settings, "rotationSpeed", 0, 360).name('贴图旋转速度');
+    folder.add(settings, "rotationSpeedRandomRatio", 0, 1).name('旋转速度随机系数');
 
-    folder.add(settings, "运动开始尺寸", 0, 10);
-    folder.add(settings, "运动结束尺寸", 0, 10);
-    folder.add(settings, "尺寸随机系数", 0, 1);
+    folder.add(settings, "startSize", 0, 10).name('运动开始尺寸');
+    folder.add(settings, "endSize", 0, 10).name('运动结束尺寸');
+    folder.add(settings, "sizeRandomRatio", 0, 1).name('尺寸随机系数');
 
-    folder.add(settings, "运动开始透明度", 0, 1);
-    folder.add(settings, "运动结束透明度", 0, 1);
-    folder.add(settings, "透明度随机系数", 0, 1);
+    folder.add(settings, "startOpacity", 0, 1).name('运动开始透明度');
+    folder.add(settings, "endOpacity", 0, 1).name('运动结束透明度');
+    folder.add(settings, "opacityRandomRatio", 0, 1).name('透明度随机系数');
 
-    folder.addColor(settings, "运动开始颜色");
-    folder.addColor(settings, "运动结束颜色");
+    folder.addColor(settings, "startColor").name('运动开始颜色');
+    folder.addColor(settings, "endColor").name('运动结束颜色');
 
-    settings["移除"] = function () {
+    settings.remove = function () {
 
         group.remove(particle);
         particle.dispose();
@@ -215,7 +215,7 @@ function addParticle(particle) {
 
     }
 
-    folder.add(settings, "移除");
+    folder.add(settings, "remove").name('移除');
 
     allSettings.push(settings);
 
@@ -434,11 +434,11 @@ function initGUI() {
     scaleFoler.add(group.scale, "y", 1, 5);
     scaleFoler.add(group.scale, "z", 1, 5);
 
-    settings["添加粒子"] = addParticle;
-    gui.add(settings, "添加粒子");
+    settings.addParticle = addParticle;
+    gui.add(settings, "addParticle").name('添加粒子');
 
-    settings["添加尾焰"] = addTailFlame;
-    gui.add(settings, "添加尾焰");
+    settings.addTailFlame = addTailFlame;
+    gui.add(settings, "addTailFlame").name('添加尾焰');
 
     addTailFlame();
 

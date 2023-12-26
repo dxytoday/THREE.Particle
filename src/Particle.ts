@@ -123,7 +123,7 @@ export class Particle extends THREE.Points {
 
             }
 
-            this.material.uniforms.opacity.value = this.material.opacity;
+            material.uniforms.opacity.value = material.opacity;
 
         }
 
