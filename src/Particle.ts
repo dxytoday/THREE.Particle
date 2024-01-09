@@ -54,11 +54,7 @@ export class Particle extends THREE.Points {
 
         }
 
-        if (this.boundingSphere !== null) {
-
-            this.computeBoundingSphere();
-
-        }
+        this.boundingSphere = null;
 
     }
 
@@ -186,11 +182,9 @@ export class Particle extends THREE.Points {
 
         if (this.independentMotion) {
 
-            const haveChanged = this.geometry.updateAttributes(this);
+            if (this.geometry.updateAttributes(this)) {
 
-            if (haveChanged && this.boundingSphere !== null) {
-
-                this.computeBoundingSphere();
+                this.boundingSphere = null;
 
             }
 
